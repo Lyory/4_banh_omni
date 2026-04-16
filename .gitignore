@@ -1,0 +1,8 @@
+# Cache của Python (nếu thư mục scripts có code rclpy)
+__pycache__/
+*.pyc
+
+# File cấu hình của Editor và OS
+.vscode/
+*~
+.DS_Store

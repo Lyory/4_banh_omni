@@ -1,0 +1,30 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: true
+
+    # PHẢI KHAI BÁO TYPE Ở ĐÂY
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    wheel_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+
+# KHAI BÁO DANH SÁCH KHỚP CHO TỪNG BỘ ĐIỀU KHIỂN
+joint_position_controller:
+  ros__parameters:
+    joints:
+      - l1
+      - l2
+
+wheel_velocity_controller:
+  ros__parameters:
+    joints:
+      - w1
+      - w2
+      - w3
+      - w4

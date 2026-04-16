@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<robot name="robot">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-3.24159650053057E-07 -2.77555756156289E-17 -0.0880190321011237" rpy="0 0 0" />
+      <mass value="1.60871892135771" />
+      <inertia ixx="0.003820857251224" ixy="-5.45945661495239E-17" ixz="-1.03129716330073E-08" iyy="0.0038208610045686" iyz="7.20214372703818E-20" izz="0.0070632727871881" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wheel1">
+    <inertial>
+      <origin xyz="9.15333442930155E-08 1.59477313360634E-06 -0.0131999999356674" rpy="0 0 0" />
+      <mass value="0.042746824244381" />
+      <inertia ixx="3.36135178077625E-06" ixy="1.54604789471726E-10" ixz="2.77423227933973E-09" iyy="3.36403756201209E-06" iyz="-1.59203332727708E-10" izz="6.22807467011582E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="w1" type="continuous">
+    <origin xyz="0.0947487373415291 -0.0947487373415291 -0.113000000000001" rpy="1.5707963267949 0 0.785398163397449" />
+    <parent link="base_link" />
+    <child link="wheel1" />
+    <axis xyz="0 0 1" />
+    <limit effort="100.0" velocity="20.0" /> <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="wheel2">
+    <inertial>
+      <origin xyz="-1.5186624369723E-06 -4.97499993673545E-07 -0.0132000003443727" rpy="0 0 0" />
+      <mass value="0.042746746732454" />
+      <inertia ixx="3.36378005144439E-06" ixy="7.99667395102913E-10" ixz="-8.65370568767186E-10" iyy="3.36160016169437E-06" iyz="2.64175257117796E-09" izz="6.22806845662569E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="w2" type="continuous">
+    <origin xyz="-0.0947487373415291 -0.0947487373415293 -0.113000000000001" rpy="1.5707963267949 0 -0.785398163397448" />
+    <parent link="base_link" />
+    <child link="wheel2" />
+    <axis xyz="0 0 1" />
+    <limit effort="100.0" velocity="20.0" /> <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="wheel3">
+    <inertial>
+      <origin xyz="-1.5186624369723E-06 -4.97499993395989E-07 -0.0132000003443732" rpy="0 0 0" />
+      <mass value="0.0427467467324529" />
+      <inertia ixx="3.36378005144432E-06" ixy="7.9966739517272E-10" ixz="-8.65370568723775E-10" iyy="3.36160016169408E-06" iyz="2.64175257117659E-09" izz="6.22806845662532E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="w3" type="continuous">
+    <origin xyz="-0.0947487373415292 0.0947487373415291 -0.113000000000001" rpy="1.5707963267949 0 -2.35619449019234" />
+    <parent link="base_link" />
+    <child link="wheel3" />
+    <axis xyz="0 0 1" />
+    <limit effort="100.0" velocity="20.0" /> <dynamics damping="0.1" friction="0.1" />
+
+  </joint>
+
+  <link name="wheel4">
+    <inertial>
+      <origin xyz="1.51866243794374E-06 -4.97499993756811E-07 -0.0131999996556265" rpy="0 0 0" />
+      <mass value="0.0427467467324521" />
+      <inertia ixx="3.36378005144439E-06" ixy="-7.99667395214163E-10" ixz="-8.65370568688306E-10" iyy="3.36160016169371E-06" iyz="-2.64175257118652E-09" izz="6.22806845662503E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/wheel4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="w4" type="continuous">
+    <origin xyz="0.0947487373415292 0.0947487373415291 -0.113000000000001" rpy="1.5707963267949 0 2.35619449019235" />
+    <parent link="base_link" />
+    <child link="wheel4" />
+    <axis xyz="0 0 1" />
+    <limit effort="100.0" velocity="20.0" /> <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="imu">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/imu.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="i1" type="fixed">
+    <origin xyz="0 0 -0.125000000000001" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="lidar">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.12" />
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/lidar.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lid" type="fixed">
+    <origin xyz="0 0 -0.0750000000000013" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="link1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.04" />
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="l1" type="revolute">
+    <origin xyz="0 0 0.065585" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="100.0" velocity="3.14" />
+    <dynamics damping="10.0" friction="5.0" />
+  </joint>
+
+  <link name="link2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.08" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="l2" type="prismatic">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.05" upper="0.7" effort="100.0" velocity="1.0" />
+    <dynamics damping="20.0" friction="10.0" />
+  </joint>
+
+  <link name="camera">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/camera.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="cam" type="fixed">
+    <origin xyz="-0.0353614486486953 -0.145772315442493 -0.0234999999999997" rpy="0 0 0" />
+    <parent link="link2" />
+    <child link="camera" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <gazebo reference="wheel1">
+    <mu1>1.0</mu1>
+    <mu2>0.0</mu2> <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+  
+  <gazebo reference="wheel2">
+    <mu1>1.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+  
+  <gazebo reference="wheel3">
+    <mu1>1.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+  
+  <gazebo reference="wheel4">
+    <mu1>1.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <gazebo reference="lidar">
+    <sensor name="lidar_sensor" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.0</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>12.0</max>
+          <resolution>0.015</resolution>
+        </range>
+      </ray>
+      <plugin name="gazebo_ros_lidar" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>lidar</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <sensor name="camera_sensor" type="camera">
+      <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>30.0</update_rate>
+      <camera>
+        <horizontal_fov>1.047198</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>8.0</far>
+        </clip>
+      </camera>
+      <plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
+        <ros>
+          <remapping>~/image_raw:=camera/image_raw</remapping>
+        </ros>
+        <camera_name>robot_camera</camera_name>
+        <frame_name>camera</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="imu">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin name="gazebo_ros_imu" filename="libgazebo_ros_imu_sensor.so">
+        <ros>
+          <remapping>~/out:=imu/data</remapping>
+        </ros>
+        <initial_orientation_as_reference>false</initial_orientation_as_reference>
+        <frame_name>imu</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>$(find robot)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    
+    <joint name="l1">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="l2">
+      <command_interface name="position">
+        <param name="min">-0.05</param>
+        <param name="max">0.7</param>
+      </command_interface>
+      <state_interface name="position"/>
+    </joint>
+
+    <joint name="w1">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="w2">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="w3">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="w4">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+  
+
+  <gazebo>
+    <plugin name="gazebo_ros_planar_move" filename="libgazebo_ros_planar_move.so">
+      <ros>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <update_rate>100.0</update_rate>
+      <publish_rate>10.0</publish_rate>
+      
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
+    </plugin>
+  </gazebo>
+</robot>
