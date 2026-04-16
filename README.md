@@ -32,7 +32,9 @@ Chạy lệnh:
 `mkdir -p ~/my_robot/src
 cd ~/my_robot/src`
 
-Tiến hành source và build project:
+Giải nén file, sau đó vào đường dẫn `/src/` tạo 1 folder có tên là robot sau đó tiến hành copy các file trong thư mục đã giải nén (config, launch, meshes,...) vào trong folder robot.
+
+Trỏ vào workplace sau đó tiến hành colcon build dự án, source lại môi trường trước khi chạy file launch.
 
 `cd ~/my_robot
 colcon build --packages-select robot
