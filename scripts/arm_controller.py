@@ -20,6 +20,7 @@ def main(args=None):
 
     try:
         while rclpy.ok():
+            print("Giới hạn (Xoay: -3.14 đến 3.14 rad, Nâng -0.05 đến 0.07m)")
             user_input = input("Nhập lệnh (Xoay Nâng): ")
             
             if user_input.lower() == 'q':
@@ -39,7 +40,7 @@ def main(args=None):
                 msg.data = [target_angle, current_height] # Gửi góc mới, độ cao cũ
                 publisher.publish(msg)
                 
-                # Tạm dừng chương trình để chờ mô tơ trong Gazebo xoay xong
+                # stop
                 time.sleep(2.0) 
                 # Điều khiển tịnh tiến
                 print(f"Đang tịnh tiến đến độ cao {target_height} m...")

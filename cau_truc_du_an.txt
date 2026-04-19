@@ -1,0 +1,33 @@
+4_banh_omni
+├── CMakeLists.txt		#File xây dựng package
+├── config			# Chứa file cấu hình và Rviz
+│   └── controllers.yaml
+├── launch			# Chứa file launch (mở gazebo, khởi tạo môi trường Waffe,...)
+│   └── display.launch.py
+├── meshes			# Chứa file STL 3D
+│   ├── banh_xe_1.STL
+│   ├── banh_xe_2.STL
+│   ├── banh_xe_3.STL
+│   ├── banh_xe_4.STL
+│   ├── base_link.STL
+│   ├── camera.STL
+│   ├── imu.STL
+│   ├── khop_tinh_tien.STL
+│   ├── lidar.STL
+│   ├── link1.STL
+│   ├── link2.STL
+│   ├── tay_robot.STL
+│   ├── wheel1.STL
+│   ├── wheel2.STL
+│   ├── wheel3.STL
+│   └── wheel4.STL
+├── package.xml			# File mô tả package ROS2
+├── rviz			# Chứa file lưu cấu hình khởi động Rviz
+│   └── robot.rviz
+├── scripts			# File Scripts điều khiển tay máy
+│   └── arm_controller.py
+└── urdf			# File urdf khai báo thông tin robot
+    ├── robot.csv
+    └── robot.urdf
+
+6 directories, 25 files
