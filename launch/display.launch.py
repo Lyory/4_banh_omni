@@ -8,15 +8,15 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
     # 1. Khai báo các đường dẫn
-    pkg_share = get_package_share_directory('robot') # Tên package của bạn
+    pkg_share = get_package_share_directory('robot')
     
     # Lấy đường dẫn tới package turtlebot3_gazebo
     pkg_tb3_gazebo = get_package_share_directory('turtlebot3_gazebo')
     
-    # Chọn map Waffle (turtlebot3_world.world là map kinh điển có các cột)
+    # Chọn map Waffle
     world_path = os.path.join(pkg_tb3_gazebo, 'worlds', 'turtlebot3_world.world')
     
-    # Đường dẫn để Gazebo tìm thấy mesh của robot bạn
+    # Duong dan den workspace_models
     workspace_models_path = os.path.join(pkg_share, '..')
 
     # 2. Xử lý file URDF
@@ -24,7 +24,6 @@ def generate_launch_description():
     robot_desc = xacro.process_file(xacro_file).toxml()
 
     # 3. Thiết lập biến môi trường GAZEBO_MODEL_PATH
-    # Thêm cả đường dẫn model của TB3 để Gazebo load được các cột, tường trong map
     set_gazebo_model_path = SetEnvironmentVariable(
         name='GAZEBO_MODEL_PATH',
         value=[
@@ -50,7 +49,7 @@ def generate_launch_description():
     )
 
     # 6. Node Spawn Robot
-    # Chỉnh tọa độ spawn (x: -2.0) để robot không xuất hiện đè lên cái cột ở tâm map
+    # Chỉnh tọa độ spawn 
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
@@ -76,7 +75,7 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}]
     )
 
-    # 8. Controller Spawners (Kích hoạt bộ điều khiển)
+    # 8. Controller Spawners
     load_joint_state_broadcaster = Node(
         package="controller_manager",
         executable="spawner",
@@ -88,12 +87,6 @@ def generate_launch_description():
         executable="spawner",
         arguments=["joint_position_controller"],
     )
-
-   # load_wheel_velocity_controller = Node(
-    #    package="controller_manager",
-     #   executable="spawner",
-      #  arguments=["wheel_velocity_controller"],
-    #)
 
     return LaunchDescription([
         set_gazebo_model_path,
