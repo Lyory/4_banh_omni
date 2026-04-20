@@ -42,13 +42,13 @@ source install/setup.bash`
 
 Mở cùng lúc 3 terminal và tiến hành source môi trường cho cả 3:
 
-Chạy file launch:
+**Chạy file launch:**
 `ros2 launch robot display.launch.py`
 
-Điều khiển robot di chuyển:
+**Điều khiển robot di chuyển:**
 `ros2 run teleop_twist_keyboard teleop_twist_keyboard`
 
-Điều khiển tay máy robot sử dụng câu lệnh:
+**Điều khiển tay máy robot sử dụng câu lệnh:**
 `ros2 run robot arm_controller.py`
 
 Nhập lệnh dạng ' Góc xoay , Độ cao '
