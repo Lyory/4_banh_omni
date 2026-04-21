@@ -25,6 +25,7 @@ Mở Terminal và chạy lệnh sau để cài đặt các package cần thiết
 
 `sudo apt install ros-humble-gazebo-ros-pkgs \ros-humble-ros2-control \ ros-humble-gazebo-ros2-control \ ros-humble-teleop-twist-keyboard \ ros-humble-xacro \ ros-humble-rviz-imu-plugin`
 
+`sudo apt install ros-humble-position-controllers`
 
 Sau khi clone Repository về, cần tạo workplace để có thể chạy chương trình: 
 Chạy lệnh:
