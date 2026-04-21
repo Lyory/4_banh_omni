@@ -34,27 +34,39 @@ sudo apt install ros-humble-position-controllers
 
 Clone Repository bằng lệnh:
 
-`git clone https://github.com/Lyory/4_banh_omni.git`
+```bash
+git clone https://github.com/Lyory/4_banh_omni.git
+```
 
 Sau khi clone thành công, tiến hành trỏ vào thư mục:
-
-`cd 4_banh_omni`
+```bash
+cd 4_banh_omni
+```
 
 Tiến hành colcon build dự án, source lại môi trường trước khi chạy file launch.
 
-`colcon build`
+```bash
+colcon build
+```
 
 Mở cùng lúc 3 terminal và tiến hành source môi trường cho cả 3:
 
-`source install/setup.bash`
+```bash
+source install/setup.bash
+```
 
 **Chạy file launch:**
-`ros2 launch robot display.launch.py`
+```bash
+ros2 launch robot display.launch.py
+```
 
 **Điều khiển robot di chuyển:**
-`ros2 run teleop_twist_keyboard teleop_twist_keyboard`
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
 
 **Điều khiển tay máy robot sử dụng câu lệnh:**
-`ros2 run robot arm_controller.py`
-
+```bash
+ros2 run robot arm_controller.py
+```
 Nhập lệnh dạng ' Góc xoay , Độ cao '
