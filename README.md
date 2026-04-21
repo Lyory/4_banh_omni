@@ -27,18 +27,17 @@ Mở Terminal và chạy lệnh sau để cài đặt các package cần thiết
 
 `sudo apt install ros-humble-position-controllers`
 
-Sau khi clone Repository về, cần tạo workplace để có thể chạy chương trình: 
-Chạy lệnh:
+Clone Repository bằng lệnh:
 
-`mkdir -p ~/my_robot/src
-cd ~/my_robot/src`
+`git clone https://github.com/Lyory/4_banh_omni.git`
 
-Giải nén file, sau đó vào đường dẫn `/src/` tạo 1 folder có tên là robot sau đó tiến hành copy các file trong thư mục đã giải nén (config, launch, meshes,...) vào trong folder robot.
+Sau khi clone thành công, tiến hành trỏ vào thư mục:
 
-Trỏ vào workplace sau đó tiến hành colcon build dự án, source lại môi trường trước khi chạy file launch.
+`cd 4_banh_omni`
 
-`cd ~/my_robot
-colcon build --packages-select robot
+Tiến hành colcon build dự án, source lại môi trường trước khi chạy file launch.
+
+`colcon build --packages-select 4_banh_omni
 source install/setup.bash`
 
 Mở cùng lúc 3 terminal và tiến hành source môi trường cho cả 3:
