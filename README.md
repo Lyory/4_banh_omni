@@ -37,8 +37,7 @@ Sau khi clone thành công, tiến hành trỏ vào thư mục:
 
 Tiến hành colcon build dự án, source lại môi trường trước khi chạy file launch.
 
-`colcon build --packages-select 4_banh_omni
-source install/setup.bash`
+`colcon build`
 
 Mở cùng lúc 3 terminal và tiến hành source môi trường cho cả 3:
 
