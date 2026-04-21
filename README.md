@@ -42,6 +42,8 @@ source install/setup.bash`
 
 Mở cùng lúc 3 terminal và tiến hành source môi trường cho cả 3:
 
+`source install/setup.bash`
+
 **Chạy file launch:**
 `ros2 launch robot display.launch.py`
 
