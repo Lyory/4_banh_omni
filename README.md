@@ -20,12 +20,17 @@ Robot được mô phỏng trên:
 ### Các thư viện cần thiết 
 Mở Terminal và chạy lệnh sau để cài đặt các package cần thiết cho dự án:
 
+Cài đặt các gói ROS 2 cần thiết:
 
-`sudo apt update`
-
-`sudo apt install ros-humble-gazebo-ros-pkgs \ros-humble-ros2-control \ ros-humble-gazebo-ros2-control \ ros-humble-teleop-twist-keyboard \ ros-humble-xacro \ ros-humble-rviz-imu-plugin`
-
-`sudo apt install ros-humble-position-controllers`
+```bash
+sudo apt install ros-humble-gazebo-ros-pkgs \
+ros-humble-ros2-control \
+ros-humble-gazebo-ros2-control \
+ros-humble-teleop-twist-keyboard \
+ros-humble-xacro \
+ros-humble-rviz-imu-plugin
+sudo apt install ros-humble-position-controllers
+```
 
 Clone Repository bằng lệnh:
 
